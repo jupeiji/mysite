@@ -1,0 +1,15 @@
+{% extends 'moban.html' %}
+{% block title %}
+<p>我的网站</p>
+{% endblock %}
+
+{% block content %}
+    <p>一共有{{ blogs|length}}篇博客</p>
+    {% for blog in blogs %}
+    <a href ="/blog/{{blog.pk}}">{{blog.title}}
+            <h3>
+            {{ blog.context}}
+            </h3>
+    </a>
+    {% endfor %}
+{% endblock %}
